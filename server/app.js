@@ -10,7 +10,13 @@ import cors from 'cors'
 dotenv.config();
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors(
+    {
+        origin:["https://frontend-2kxfh67da-praveen-raghavs-projects.vercel.app"],
+        methods:["GET" , "POST" , "DELETE"],
+        credentials:true,
+    }
+));
 //Middelwares 
 app.use("/user" , userRouter);
 app.use("/admin" , adminRouter);
@@ -21,6 +27,9 @@ mongoose.connect(process.env.MONGODB_URI).then(()=>
 
     app.listen(5000 , ()=>{
         console.log(`Data bese and server is running`)
+    }),
+    app.get("/" , (req,res)=>{
+        res.json("Hello , Server Connected")
     })
 
 )
