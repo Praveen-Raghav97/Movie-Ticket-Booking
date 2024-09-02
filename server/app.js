@@ -11,13 +11,7 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
-app.use(cors(
-    {
-        origin:[""],
-        methods:["GET" , "POST" , "DELETE"],
-        credentials:true,
-    }
-));
+app.use(cors());
 //Middelwares 
 app.use("/user" , userRouter);
 app.use("/admin" , adminRouter);
@@ -27,7 +21,7 @@ app.use("/booking" , bookingRouter);
 mongoose.connect(process.env.MONGODB_URI).then(()=>
 
     app.get("/" , (req,res)=>{
-        res.send("Hello , Server Connected")
+        res.json("Hello , Server Connected")
     }),
 
     app.listen(5000 , ()=>{
