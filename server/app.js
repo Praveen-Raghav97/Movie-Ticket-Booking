@@ -13,7 +13,7 @@ const app = express();
 app.use(express.json());
 app.use(cors(
     {
-        origin:["https://frontend-2kxfh67da-praveen-raghavs-projects.vercel.app"],
+        origin:[""],
         methods:["GET" , "POST" , "DELETE"],
         credentials:true,
     }
