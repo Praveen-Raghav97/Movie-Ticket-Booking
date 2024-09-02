@@ -9,7 +9,7 @@ import { store } from './store';
 import {ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 const root = ReactDOM.createRoot(document.getElementById('root'));
-axios.defaults.baseURL = "https://movie-ticket-booking-bq7os1ys5-praveen-raghavs-projects.vercel.app"
+axios.defaults.baseURL = "https://movie-ticket-booking-5jid8inu7-praveen-raghavs-projects.vercel.app"
 root.render(
   <React.StrictMode>
  
