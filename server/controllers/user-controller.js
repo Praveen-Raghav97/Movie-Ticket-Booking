@@ -1,7 +1,7 @@
 import Booking from "../models/Booking.js";
 import User from "../models/User.js";
-import bcrypt from 'bcrypt'
 
+import bcrypt from 'bcrypt'
 
 const getalluser = async(req,res,next) => {
 let users;
