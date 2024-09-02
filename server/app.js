@@ -8,6 +8,7 @@ import bookingRouter from "./routes/booking-routes.js";
 import cors from 'cors'
 
 dotenv.config();
+
 const app = express();
 app.use(express.json());
 app.use(cors(
@@ -25,14 +26,17 @@ app.use("/booking" , bookingRouter);
 
 mongoose.connect(process.env.MONGODB_URI).then(()=>
 
+    app.get("/" , (req,res)=>{
+        res.send("Hello , Server Connected")
+    }),
+
     app.listen(5000 , ()=>{
         console.log(`Data bese and server is running`)
     }),
-    app.get("/" , (req,res)=>{
-        res.json("Hello , Server Connected")
-    })
+  
 
 )
 .catch((e)=>
     console.log(e)
 )
+
