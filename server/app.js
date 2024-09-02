@@ -22,7 +22,7 @@ app.use("/booking" , bookingRouter);
 mongoose.connect(process.env.MONGODB_URI).then(()=>
 
     app.get("/" , (req,res)=>{
-        res.json("Hello , Server Connected")
+        res.send("Hello , Server Connected")
     }),
 
     app.listen(5000 , ()=>{
