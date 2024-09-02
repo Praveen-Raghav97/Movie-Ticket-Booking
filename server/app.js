@@ -11,7 +11,9 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin:"https://movie-ticket-booking-ptxk-9f15bwjwl-praveen-raghavs-projects.vercel.app"
+}));
 
 //Middelwares 
 app.use("/user" , userRouter);
