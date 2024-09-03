@@ -11,9 +11,11 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
+
 app.use(cors({
     origin:"https://movie-ticket-booking-ptxk.vercel.app",
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true, // Allow credentials (cookies, authorization headers, etc.)
   optionsSuccessStatus: 204
 }));
@@ -29,7 +31,7 @@ mongoose.connect(process.env.MONGODB_URI).then(()=>
     app.get("/" , (req,res)=>{
         res.send("Hello , Server Connected")
     }),
-    
+
 
     app.listen(5000 , ()=>{
         console.log(`Data bese and server is running`)
