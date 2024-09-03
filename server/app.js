@@ -10,15 +10,16 @@ import cors from 'cors'
 dotenv.config();
 
 const app = express();
-app.use(express.json());
+
 
 app.use(cors({
-    origin:"https://movie-ticket-booking-ptxk.vercel.app",
+    origin:["https://movie-ticket-booking-ptxk.vercel.app"],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-  optionsSuccessStatus: 204
+    credentials:true,
+ 
 }));
 
+app.use(express.json());
 //Middelwares 
 app.use("/user" , userRouter);
 app.use("/admin" , adminRouter);
