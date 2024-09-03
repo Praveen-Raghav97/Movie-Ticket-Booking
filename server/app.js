@@ -13,7 +13,7 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({
-    origin:"https://movie-ticket-booking-ptxk-izbkjt99o-praveen-raghavs-projects.vercel.app",
+    origin:"https://movie-ticket-booking-ptxk.vercel.app",
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
   optionsSuccessStatus: 204
