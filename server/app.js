@@ -16,7 +16,6 @@ app.use(cors({
     origin:"https://movie-ticket-booking-ptxk-izbkjt99o-praveen-raghavs-projects.vercel.app",
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true, // Allow credentials (cookies, authorization headers, etc.)
   optionsSuccessStatus: 204
 }));
 
