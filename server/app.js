@@ -29,6 +29,7 @@ mongoose.connect(process.env.MONGODB_URI).then(()=>
     app.get("/" , (req,res)=>{
         res.send("Hello , Server Connected")
     }),
+    
 
     app.listen(5000 , ()=>{
         console.log(`Data bese and server is running`)
